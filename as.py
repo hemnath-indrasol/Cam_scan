@@ -27,17 +27,19 @@ for c in cnts:
     peri = cv2.arcLength(c, True)
     approx = cv2.approxPolyDP(c, 0.02 * peri, True)
     cv2.drawContours(image, [approx], -1, (0, 255, 0), 2)
-cv2.imshow("approx", image)
+
+cv2.imwrite("Image.jpg", image)
+cv2.imwrite("Edged.jpg", edged)
+cv2.imwrite("approx.jpg", image)
 
 
 
 
     #print(len(approx))
 
-
-
-##cv2.imshow("Image", image)
-#cv2.imshow("Edged", edged)
+cv2.imshow("approx", image)
+cv2.imshow("Image", image)
+cv2.imshow("Edged", edged)
 
 
 cv2.waitKey(0)
